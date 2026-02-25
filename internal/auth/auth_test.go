@@ -14,10 +14,10 @@ func TestGetAPIKey(t *testing.T) {
 		errMessage string
 	}{
 		{
-			name:       "Valid API Key",
-			headers:    http.Header{"Authorization": []string{"ApiKey abc123def456"}},
-			wantKey:    "abc123def456",
-			wantErr:    false,
+			name:    "Valid API Key",
+			headers: http.Header{"Authorization": []string{"ApiKey abc123def456"}},
+			wantKey: "abc123def456",
+			wantErr: false,
 		},
 		{
 			name:       "Missing Authorization Header",
@@ -48,10 +48,10 @@ func TestGetAPIKey(t *testing.T) {
 			errMessage: "malformed authorization header",
 		},
 		{
-			name:       "Valid API Key with Extra Spaces",
-			headers:    http.Header{"Authorization": []string{"ApiKey  key-with-dashes"}},
-			wantKey:    "key-with-dashes",
-			wantErr:    false,
+			name:    "Valid API Key with Extra Spaces",
+			headers: http.Header{"Authorization": []string{"ApiKey  key-with-dashes"}},
+			wantKey: "key-with-dashes",
+			wantErr: false,
 		},
 	}
 
